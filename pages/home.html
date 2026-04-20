@@ -12,9 +12,9 @@
         color: white;
         background-color: #111;
         overflow-x: hidden;
+        cursor: url(../img/cursor/cursor.png), auto;
       }
 
-      /* Fundo de Partículas */
       #particles-js {
         position: fixed;
         width: 100%;
@@ -24,7 +24,12 @@
         z-index: -1;
       }
 
-      /* Botão Voltar */
+      a,
+      .btn-voltar,
+      .card {
+        cursor: url(../img/cursor/pointer.png), pointer;
+      }
+
       .btn-voltar {
         display: inline-block;
         padding: 10px 20px;
@@ -173,7 +178,7 @@
         particles: {
           number: { value: 80 },
           color: { value: "#ffffff" },
-          shape: { type: "circle" },
+          shape: { type: "edge" },
           opacity: { value: 0.5 },
           size: { value: 3, random: true },
           line_linked: {

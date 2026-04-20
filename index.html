@@ -13,6 +13,13 @@
         color: white;
         background-color: #111;
         overflow: hidden;
+        cursor: url("img/cursor/cursor.png"), auto;
+      }
+
+      a,
+      .btn-entrar,
+      .social-icons a {
+        cursor: url("img/cursor/pointer.png"), pointer;
       }
 
       #particles-js {
@@ -150,8 +157,7 @@
     </div>
 
     <section class="about-dev">
-      <h2>Desenvolvido por: <span>Victor Sarrís</span></h2>
-      <p>Acompanhe meu trabalho nas redes:</p>
+      <h2>Minhas redes Sociais 😊👇</h2>
 
       <div class="social-icons">
         <a href="#" target="_blank" rel="external">
@@ -190,7 +196,7 @@
         particles: {
           number: { value: 80 },
           color: { value: "#ffffff" },
-          shape: { type: "circle" },
+          shape: { type: "edge" },
           opacity: { value: 0.5 },
           size: { value: 3, random: true },
           line_linked: {
