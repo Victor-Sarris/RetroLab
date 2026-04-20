@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Retro Lab - Jogando</title>
+    <style>
+      body {
+        background: #111;
+        color: #fff;
+        text-align: center;
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      .btn-back {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #e52521;
+        color: white;
+        text-decoration: none;
+        margin: 20px;
+        border-radius: 5px;
+        border: 2px solid #b31b17;
+        font-weight: bold;
+      }
+      .btn-back:hover {
+        background-color: #ff3b36;
+      }
+
+      .game-container {
+        margin: 20px auto;
+        width: 600px;
+        height: 450px;
+        border: 4px solid #8a2be2;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="text-align: left">
+      <a href="../home.html" class="btn-back">← VOLTAR PARA BIBLIOTECA</a>
+    </div>
+
+    <h1 id="game-title">Carregando Jogo...</h1>
+
+    <div class="game-container">
+      <iframe
+        id="game-frame"
+        width="600"
+        height="450"
+        frameborder="no"
+        allowfullscreen="true"
+        webkitallowfullscreen="true"
+        mozallowfullscreen="true"
+        scrolling="no"
+      ></iframe>
+    </div>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const title = urlParams.get("title");
+      const embedUrl = urlParams.get("embed");
+
+      if (title) {
+        document.getElementById("game-title").innerText = "Jogando: " + title;
+      }
+
+      if (embedUrl) {
+        document.getElementById("game-frame").src = embedUrl;
+      } else {
+        document.getElementById("game-title").innerText =
+          "Erro: Jogo não encontrado.";
+      }
+    </script>
+  </body>
+</html>

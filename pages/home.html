@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retro Lab - Biblioteca</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: white;
+        background-color: #111;
+        overflow-x: hidden;
+      }
+
+      /* Fundo de Partículas */
+      #particles-js {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+
+      /* Botão Voltar */
+      .btn-voltar {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 20px;
+        background-color: #e52521;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        border: 2px solid #b31b17;
+        transition: 0.3s;
+      }
+      .btn-voltar:hover {
+        transform: scale(1.1);
+        background-color: #ff3b36;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 30px;
+        padding: 40px;
+        position: relative;
+        z-index: 1;
+      }
+
+      h1 {
+        text-align: center;
+        color: greenyellow;
+        text-shadow: 2px 2px 4px #000;
+      }
+
+      /* Cartão de Jogo Melhorado */
+      .card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        border-radius: 15px;
+        padding: 15px;
+        text-align: center;
+        transition: 0.3s;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .card:hover {
+        transform: translateY(-10px);
+        background: rgba(138, 43, 226, 0.3);
+        border-color: blueviolet;
+      }
+      .card img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+      .card a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="particles-js"></div>
+
+    <a href="../index.html" class="btn-voltar">← MENU PRINCIPAL</a>
+
+    <h1>Biblioteca de Clássicos</h1>
+
+    <div class="container">
+      <div class="card">
+        <a
+          href="games/player.html?title=Jetman&embed=https://www.retrogames.cc/embed/21566-choujin-sentai-jetman-japan.html"
+        >
+          <img src="../img/ChoujinSentaiJetman.png" alt="Jetman" />
+          <p>Choujin Sentai Jetman</p>
+        </a>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 80 },
+          color: { value: "#ffffff" },
+          shape: { type: "circle" },
+          opacity: { value: 0.5 },
+          size: { value: 3, random: true },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#8a2be2",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: { enable: true, speed: 2, out_mode: "out" },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: { onhover: { enable: true, mode: "repulse" } },
+        },
+      });
+    </script>
+  </body>
+</html>
