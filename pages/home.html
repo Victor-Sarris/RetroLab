@@ -4,13 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Retro Lab - Biblioteca</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
       body {
         margin: 0;
         padding: 0;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Rajdhani", sans-serif;
         color: white;
-        background-color: #111;
+        background-color: #050505;
         overflow-x: hidden;
         cursor: url(../img/cursor/cursor.png), auto;
       }
@@ -32,60 +36,86 @@
 
       .btn-voltar {
         display: inline-block;
-        padding: 10px 20px;
-        margin: 20px;
-        background-color: #e52521;
-        color: white;
+        padding: 12px 24px;
+        margin: 30px;
+        background-color: transparent;
+        color: #ffffff;
         text-decoration: none;
-        font-weight: bold;
-        border-radius: 5px;
-        border: 2px solid #b31b17;
+        font-family: "Press Start 2P", cursive;
+        font-size: 0.8rem;
+        border: 2px solid #8a2be2;
+        box-shadow: 0 0 10px #8a2be2;
         transition: 0.3s;
       }
-      .btn-voltar:hover {
-        transform: scale(1.1);
-        background-color: #ff3b36;
-      }
 
-      .container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 30px;
-        padding: 40px;
-        position: relative;
-        z-index: 1;
+      .btn-voltar:hover {
+        background-color: #8a2be2;
+        color: #fff;
+        transform: scale(1.05);
+        box-shadow: 0 0 20px #8a2be2;
       }
 
       h1 {
         text-align: center;
-        color: greenyellow;
-        text-shadow: 2px 2px 4px #000;
+        font-family: "Press Start 2P", cursive;
+        font-size: 2rem;
+        color: #ffffff;
+        text-shadow:
+          0 0 10px #39ff14,
+          0 0 20px #39ff14;
+        margin-bottom: 40px;
       }
 
-      /* Cartão de Jogo Melhorado */
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 35px;
+        padding: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
       .card {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(5px);
-        border-radius: 15px;
+        background: #111;
+        border-radius: 0;
         padding: 15px;
         text-align: center;
         transition: 0.3s;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border: 3px solid #8a2be2;
+        box-shadow:
+          inset 0 0 10px #8a2be2,
+          0 0 10px rgba(138, 43, 226, 0.5);
       }
+
       .card:hover {
         transform: translateY(-10px);
-        background: rgba(138, 43, 226, 0.3);
-        border-color: blueviolet;
+        background: #1a1a1a;
+        border-color: #39ff14;
+        box-shadow:
+          inset 0 0 15px #39ff14,
+          0 0 25px #39ff14;
       }
+
       .card img {
         width: 100%;
-        border-radius: 10px;
-        margin-bottom: 10px;
+        border-bottom: 3px solid #333;
+        margin-bottom: 15px;
+        image-rendering: pixelated;
       }
-      .card a {
+
+      .card p {
         color: white;
-        text-decoration: none;
+        font-size: 1.3rem;
+        margin: 5px 0;
         font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .card a {
+        text-decoration: none;
         display: block;
       }
     </style>

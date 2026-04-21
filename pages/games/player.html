@@ -3,14 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <title>Retro Lab - Jogando</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
       body {
-        background: #111;
+        background: #050505;
         color: #fff;
         text-align: center;
         margin: 0;
-        font-family: sans-serif;
+        font-family: "Rajdhani", sans-serif;
         cursor: url(../../img/cursor/cursor.png), auto;
+        background-image:
+          linear-gradient(rgba(138, 43, 226, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(138, 43, 226, 0.05) 1px, transparent 1px);
+        background-size: 30px 30px;
       }
 
       a,
@@ -21,43 +29,86 @@
 
       .btn-back {
         display: inline-block;
-        padding: 10px 20px;
-        background-color: #e52521;
-        color: white;
+        padding: 12px 24px;
+        background-color: transparent;
+        color: #ffffff;
         text-decoration: none;
-        margin: 20px;
-        border-radius: 5px;
-        border: 2px solid #b31b17;
-        font-weight: bold;
+        margin: 30px;
+        font-family: "Press Start 2P", cursive;
+        font-size: 0.8rem;
+        border: 2px solid #8a2be2;
+        box-shadow: 0 0 10px #8a2be2;
+        transition: 0.3s;
       }
+
       .btn-back:hover {
-        background-color: #ff3b36;
+        background-color: #8a2be2;
+        color: white;
+        box-shadow: 0 0 20px #8a2be2;
+      }
+
+      h1 {
+        font-family: "Press Start 2P", cursive;
+        font-size: 1.5rem;
+        color: #ffffff;
+        text-shadow:
+          0 0 10px #39ff14,
+          0 0 20px #39ff14;
+        margin-bottom: 20px;
+        text-transform: uppercase;
       }
 
       .game-container {
-        margin: 20px auto;
+        margin: 0 auto 40px auto;
         width: 1080px;
         height: 720px;
-        border: 4px solid #8a2be2;
-        border-radius: 10px;
+        background-color: #000;
+        border: 4px solid #ffffff;
+        box-shadow:
+          0 0 30px #39ff14,
+          inset 0 0 20px #8a2be2;
         overflow: hidden;
+        position: relative;
+      }
+
+      .game-container::after {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background:
+          linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+          linear-gradient(
+            90deg,
+            rgba(255, 0, 0, 0.06),
+            rgba(0, 255, 0, 0.02),
+            rgba(0, 0, 255, 0.06)
+          );
+        z-index: 2;
+        background-size:
+          100% 2px,
+          3px 100%;
+        pointer-events: none;
       }
 
       iframe {
         width: 100%;
         height: 100%;
         border: none;
-        cursor: url("../../img/cursor/pointer.png");
+        position: relative;
+        z-index: 1;
+        cursor: url("../../img/cursor/pointer.png"), auto;
       }
 
       @media (max-width: 768px) {
         h1 {
-          width: 70px;
-          text-align: center;
+          font-size: 1rem;
         }
-
         .game-container {
-          width: 450px;
+          width: 95%;
           height: 500px;
         }
       }
