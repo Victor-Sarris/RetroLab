@@ -122,6 +122,33 @@
   </head>
   <body>
     <div id="particles-js"></div>
+    <audio
+      id="bg-music"
+      src="../music/CursorConfetti.mp3"
+      type="audio/mpeg"
+      loop
+      autoplay
+    ></audio>
+
+    <button
+      id="music-toggle"
+      style="
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 10;
+        background: transparent;
+        border: 2px solid #39ff14;
+        color: #fff;
+        padding: 10px;
+        font-family: &quot;Press Start 2P&quot;, cursive;
+        cursor: pointer;
+      "
+    >
+      🎵 PAUSE
+    </button>
+
+    <div id="particles-js"></div>
 
     <a href="../index.html" class="btn-voltar">← MENU PRINCIPAL</a>
 
@@ -224,6 +251,25 @@
           detect_on: "canvas",
           events: { onhover: { enable: true, mode: "repulse" } },
         },
+      });
+      // --- CÓDIGO DA MÚSICA ---
+      const music = document.getElementById("bg-music");
+      const musicBtn = document.getElementById("music-toggle");
+      music.play().catch(() => {
+        musicBtn.innerText = "🎵 PLAY";
+        musicBtn.style.borderColor = "#8a2be2";
+      });
+
+      musicBtn.addEventListener("click", () => {
+        if (music.paused) {
+          music.play();
+          musicBtn.innerText = "🎵 PAUSE";
+          musicBtn.style.borderColor = "#39ff14";
+        } else {
+          music.pause();
+          musicBtn.innerText = "🎵 PLAY";
+          musicBtn.style.borderColor = "#8a2be2";
+        }
       });
     </script>
   </body>
