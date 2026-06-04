@@ -66,6 +66,70 @@
         margin-bottom: 40px;
       }
 
+      /* Fundo escuro atrás do modal */
+      .modal-overlay {
+        display: none; /* Escondido inicialmente */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(5, 5, 5, 0.9);
+        z-index: 100;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(5px);
+      }
+
+      /* Caixa central do modal */
+      .modal-content {
+        background: #111;
+        border: 3px solid #8a2be2;
+        padding: 40px;
+        text-align: center;
+        box-shadow:
+          0 0 20px rgba(138, 43, 226, 0.8),
+          inset 0 0 10px #8a2be2;
+        max-width: 400px;
+        width: 90%;
+      }
+
+      .modal-content h2 {
+        font-family: "Press Start 2P", cursive;
+        font-size: 1.2rem;
+        color: #39ff14;
+        text-shadow: 0 0 10px #39ff14;
+        margin-bottom: 30px;
+      }
+
+      /* Botões de Categoria internos */
+      .modal-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+
+      .btn-category {
+        background: transparent;
+        color: white;
+        border: 2px solid #333;
+        padding: 15px;
+        font-family: "Rajdhani", sans-serif;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: 0.3s;
+        cursor: url(../img/cursor/pointer.png), pointer;
+      }
+
+      .btn-category:hover {
+        border-color: #39ff14;
+        background: rgba(57, 255, 20, 0.1);
+        box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+        transform: scale(1.05);
+      }
+
       .container {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -154,77 +218,157 @@
 
     <h1>Biblioteca de Clássicos</h1>
 
+    <div style="text-align: center; margin-bottom: 20px">
+      <button id="btn-open-modal" class="btn-voltar">ESCOLHER CONSOLE</button>
+    </div>
+
+    <!-- Estrutura do Modal (Escondida por padrão) -->
+    <div id="category-modal" class="modal-overlay">
+      <div class="modal-content">
+        <h2>SELECIONE A CATEGORIA</h2>
+        <div class="modal-buttons">
+          <button class="btn-category" data-filter="all">TODOS OS JOGOS</button>
+          <button class="btn-category" data-filter="nes">NES</button>
+          <button class="btn-category" data-filter="n64">NINTENDO 64</button>
+          <button class="btn-category" data-filter="ps1">PLAYSTATION 1</button>
+        </div>
+        <button id="btn-close-modal" class="btn-voltar">FECHAR X</button>
+      </div>
+    </div>
+
     <div class="container">
-      <div class="card">
+      <!-- ================================ IFRAME DOS JOGOS DE SNES ================================ -->
+      <div class="card" data-category="nes">
         <a
           href="games/player.html?title=Choujin Sentai Jetman&embed=https://www.retrogames.cc/embed/21566-choujin-sentai-jetman-japan.html"
         >
-          <img src="../img/ChoujinSentaiJetman.png" alt="Jetman" />
+          <img src="../img/nes/ChoujinSentaiJetman.png" alt="Jetman" />
           <p>Choujin Sentai Jetman</p>
         </a>
       </div>
-      <div class="card">
+      <div class="card" data-category="nes">
         <a
           href="games/player.html?title=Felix The Cat &embed=https://www.retrogames.cc/embed/21044-felix-the-cat-europe.html"
         >
-          <img src="../img/FelixTheCat.png" alt="Jetman" />
+          <img src="../img/nes/FelixTheCat.png" alt="Jetman" />
           <p>Felix The Cat</p>
         </a>
       </div>
-      <div class="card">
+      <div class="card" data-category="nes">
         <a
           href="games/player.html?title=Cocoron&embed=https://www.retrogames.cc/embed/21048-cocoron-japan-en-by-magic-destiny-v1-0.html"
         >
-          <img src="../img/Cocoron.png" alt="Jetman" />
+          <img src="../img/nes/Cocoron.png" alt="Jetman" />
           <p>Cocoron</p>
         </a>
       </div>
-      <div class="card">
+      <div class="card" data-category="nes">
         <a
           href="games/player.html?title=Darkwing Duck&embed=https://www.retrogames.cc/embed/20587-darkwing-duck-europe.html"
         >
-          <img src="../img/DarkwingDuck.png" alt="Jetman" />
+          <img src="../img/nes/DarkwingDuck.png" alt="Jetman" />
           <p>Darkwing Duck</p>
         </a>
       </div>
-      <div class="card">
+      <div class="card" data-category="nes">
         <a
           href="games/player.html?title=Ninja Gaiden&embed=https://www.retrogames.cc/embed/17678-ninja-gaiden-episode-ii-the-dark-sword-of-chaos-usa.html"
         >
-          <img src="../img/NinjaGaiden.png" alt="Jetman" />
+          <img src="../img/nes/NinjaGaiden.png" alt="Jetman" />
           <p>Ninja Gainde</p>
         </a>
       </div>
-      <div class="card">
+      <div class="card" data-category="nes">
         <a
           href="games/player.html?title=Mario Edição de Aniversário 35 Anos &embed=https://www.retrogames.cc/embed/43736-smb-special-35th-anniversary-edition.html"
         >
-          <img src="../img/Mario1.png" alt="Jetman" />
+          <img src="../img/nes/Mario1.png" alt="Jetman" />
           <p>Mario</p>
         </a>
       </div>
-      <div class="card">
+      <div class="card" data-category="nes">
         <a
           href="games/player.html?title=Mario II&embed=https://www.retrogames.cc/embed/44559-return-to-subcon.html"
         >
-          <img src="../img/MarioII.png" alt="Jetman" />
+          <img src="../img/nes/MarioII.png" alt="Jetman" />
           <p>Mario II</p>
         </a>
       </div>
-      <div class="card">
+      <div class="card" data-category="nes">
         <a
           href="games/player.html?title=Sonic The Hendgehog&embed=https://www.retrogames.cc/embed/44498-sonic-the-hedgehog-vol-2.html"
         >
-          <img src="../img/Sonic.png" alt="Jetman" />
+          <img src="../img/nes/Sonic.png" alt="Jetman" />
           <p>Sonic</p>
         </a>
       </div>
-      <div class="card">
+      <div class="card" data-category="nes">
         <a
           href="games/player.html?title=MegaMan&embed=https://www.retrogames.cc/embed/44977-megaman-1-the-new-lands-remastered.html"
         >
-          <img src="../img/MegaMan.png" alt="Jetman" />
+          <img src="../img/nes/MegaMan.png" alt="Jetman" />
           <p>MegaMan</p>
+        </a>
+      </div>
+      <div class="card" data-category="nes">
+        <a
+          href="games/player.html?title=Dragon Ball Z - Supersonic Warriors (K)(ProjectG)&embed=https://www.retrogames.cc/embed/28096-dragon-ball-z-supersonic-warriors-k-projectg.html"
+        >
+          <img
+            src="../img/nes/dragon-ball-z-supersonic-warriors-k-projectg.webp"
+            alt="Jetman"
+          />
+          <p>Dragon Ball Z - Supersonic Warriors (K)(ProjectG)</p>
+        </a>
+      </div>
+      <!-- ================================ IFRAM DOS JOGOS DE NITENDO 64 ================================ -->
+      <div class="card" data-category="n64">
+        <a
+          href="games/player.html?title=Duck Dodgers&embed=https://www.retrogames.cc/embed/32388-daffy-duck-starring-as-duck-dodgers-europe-en-fr-de-es-it-nl.html"
+        >
+          <img src="../img/n64/duckdodgers-1646017434474.webp" alt="Jetman" />
+          <p>Duck Dodgers</p>
+        </a>
+      </div>
+      <div class="card" data-category="n64">
+        <a
+          href="games/player.html?title=Mario 64&embed=https://www.retrogames.cc/embed/42138-super-ultra-kaizo-memeio-road-128-tars-extreme-edition-revenge-deluxe.html"
+        >
+          <img src="../img/n64/Mario64.webp" alt="Jetman" />
+          <p>Mario 64</p>
+        </a>
+      </div>
+      <div class="card" data-category="n64">
+        <a
+          href="games/player.html?title=Banjo Tooie&embed=https://www.retrogames.cc/embed/32886-banjo-tooie-usa.html"
+        >
+          <img src="../img/n64/Banjo Tooie.webp" alt="Jetman" />
+          <p>Banjo Tooie</p>
+        </a>
+      </div>
+      <div class="card" data-category="n64">
+        <a
+          href="games/player.html?title=Donald Duck - Goin&embed=https://www.retrogames.cc/embed/32212-donald-duck-goin-quackers-usa-en-fr-de-es-it.html"
+        >
+          <img src="../img/n64/Donald Duck - Goin.webp" alt="Jetman" />
+          <p>Donald Duck - Goin</p>
+        </a>
+      </div>
+      <div class="card" data-category="n64">
+        <a
+          href="games/player.html?title=Zelda Ocarina Of Time&embed=https://www.retrogames.cc/embed/42737-shifting-sand-dungeon.html"
+        >
+          <img src="../img/n64/Zelda Ocarina Of Time.webp" alt="Jetman" />
+          <p>Zelda Ocarina Of Time</p>
+        </a>
+      </div>
+      <!-- IFRAME DOS JOGOS DE PS1 -->
+      <div class="card" data-category="ps1">
+        <a
+          href="games/player.html?title=Crash Bandicoot&embed=https://www.retrogames.cc/embed/40784-crash-bandicoot.html"
+        >
+          <img src="../img/n64/Crash Bandicoot.webp" alt="Jetman" />
+          <p>Crash Bandicoot</p>
         </a>
       </div>
     </div>
@@ -252,7 +396,6 @@
           events: { onhover: { enable: true, mode: "repulse" } },
         },
       });
-      // --- CÓDIGO DA MÚSICA ---
       const music = document.getElementById("bg-music");
       const musicBtn = document.getElementById("music-toggle");
       music.play().catch(() => {
@@ -270,6 +413,39 @@
           musicBtn.innerText = "🎵 PLAY";
           musicBtn.style.borderColor = "#8a2be2";
         }
+      });
+
+      // <-- ==================== SELECAO DE JOGOS - MODAL ==================== -->
+
+      const modal = document.getElementById("category-modal");
+      const btnOpen = document.getElementById("btn-open-modal");
+      const btnClose = document.getElementById("btn-close-modal");
+      const categoryButtons = document.querySelectorAll(".btn-category");
+      const gameCards = document.querySelectorAll(".card");
+
+      btnOpen.addEventListener("click", () => {
+        modal.style.display = "flex";
+      });
+
+      btnClose.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      categoryButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const filterValue = button.getAttribute("data-filter");
+
+          gameCards.forEach((card) => {
+            const cardCategory = card.getAttribute("data-category");
+
+            if (filterValue === "all" || filterValue === cardCategory) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+          modal.style.display = "none";
+        });
       });
     </script>
   </body>
